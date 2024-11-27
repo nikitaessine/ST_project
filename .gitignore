@@ -1,1 +1,4 @@
 /_data/
+/_data-dev/
+/e2e_tests/venv/
+/e2e_tests/results/

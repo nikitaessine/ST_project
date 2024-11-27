@@ -33,3 +33,21 @@ services:
       - "6380:6380"
     volumes:
       - "./_data-dev/pubsub-data:/data"
+
+robot-tests:
+  image: python:3.10-slim
+  container_name: robot-tests
+  working_dir: /tests
+  volumes:
+    - ./e2e_tests:/tests  # Mount your tests directory
+  networks:
+    - default
+  depends_on:
+    backend:
+      condition: service_healthy
+    frontend:
+      condition: service_healthy
+  command: >
+    sh -c "
+    pip install robotframework robotframework-seleniumlibrary &&
+    robot -d /tests/results tests/test_user_registration.robot"
