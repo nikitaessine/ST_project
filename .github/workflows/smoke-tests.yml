@@ -35,5 +35,5 @@ jobs:
       - name: Run Smoke Tests
         run: |
           source .venv/bin/activate
-          robot --variable BROWSER:chrome --include smoke -d results e2e_tests/tests/
+          robot --variable BROWSER:headlesschrome --variable BROWSER_OPTIONS:"disable-dev-shm-usage" --include smoke -d results e2e_tests/tests/
       
