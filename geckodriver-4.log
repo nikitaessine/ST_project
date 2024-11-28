@@ -1,0 +1,15 @@
+1732794801412	geckodriver	INFO	Listening on 127.0.0.1:60057
+1732794801430	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/Use ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/nw/7m20wcgj22165y8346py4_d00000gn/T/rust_mozprofiletABUrQ"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1732794801653	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1732794801863	Marionette	INFO	Listening on port 60069
+WebDriver BiDi listening on ws://127.0.0.1:60058
+Read port: 60069
+1732794801992	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+DevTools listening on ws://127.0.0.1:60058/devtools/browser/62272230-ae85-4142-855c-8432c31afa00
+console.error: ({})
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1732794812474	Marionette	INFO	Stopped listening on port 60069

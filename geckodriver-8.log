@@ -1,0 +1,16 @@
+1732797270796	geckodriver	INFO	Listening on 127.0.0.1:54928
+1732797270801	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/Use ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/nw/7m20wcgj22165y8346py4_d00000gn/T/rust_mozprofileRWc7wH"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1732797270992	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1732797271203	Marionette	INFO	Listening on port 54934
+WebDriver BiDi listening on ws://127.0.0.1:54929
+Read port: 54934
+1732797271320	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+DevTools listening on ws://127.0.0.1:54929/devtools/browser/c876b7a1-dbff-42ce-8dd5-95df6345a43e
+console.error: ({})
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1732797281627	Marionette	INFO	Stopped listening on port 54934
+JavaScript error: http://localhost/static/js/2.e2533bc5.chunk.js, line 2: Error: Request failed with status code 409

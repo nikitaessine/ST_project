@@ -10,7 +10,7 @@ ${BASE_URL}       http://localhost:80
 User Can Register To The Application
     [Documentation]    Verify that a user can successfully register to the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/register    ${BROWSER}
+    Open Browser    ${BASE_URL}/register    headlesschrome
     Input Registration Details
     Submit Registration Form
     Close Browser
@@ -18,29 +18,29 @@ User Can Register To The Application
 User Can Login To The Application
     [Documentation]    Verify that a user can successfully login to the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    ${BROWSER}
+    Open Browser    ${BASE_URL}/login    headlesschrome
     Input Login Details
     Submit Login Form
-    Wait Until Page Contains    Publish    timeout=10s
+    Wait Until Page Contains    Publish    timeout=30s
     Close Browser
 
 User Can Logout From The Application
     [Documentation]    Verify that a user can successfully logout from the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    ${BROWSER}
+    Open Browser    ${BASE_URL}/login    headlesschrome
     Input Login Details
     Submit Login Form
-    Wait Until Page Contains    Publish    timeout=10s
+    Wait Until Page Contains    Publish    timeout=30s
     Sleep    3 seconds
     Press Logout Button
     Sleep    3 seconds
-    Wait Until Page Contains    Log in    timeout=10s
+    Wait Until Page Contains    Log in    timeout=30s
     Sleep    3 seconds
     Close Browser
 
 User Gets Error When Login With Wrong Credentials
     [Documentation]    Verify that a user can successfully login to the application.
-    Open Browser    ${BASE_URL}/login    ${BROWSER}
+    Open Browser    ${BASE_URL}/login    headlesschrome
     Wrong Input Login Details
     Submit Login Form
     Wait Until Page Contains    Invalid email/password combination

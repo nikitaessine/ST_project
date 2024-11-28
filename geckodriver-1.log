@@ -19,3 +19,8 @@ JavaScript error: resource:///modules/sessionstore/SessionStore.sys.mjs, line 36
 JavaScript warning: http://localhost/static/js/2.e2533bc5.chunk.js, line 2: Script terminated by timeout at:
 g@http://localhost/static/js/2.e2533bc5.chunk.js:2:399829
 
+1732796382875	Marionette	INFO	Stopped listening on port 56989
+console.error: "Failed to fetch https://spocs.getpocket.com/user:" "NetworkError when attempting to fetch resource."
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+console.error: ({})
+console.error: ({})
