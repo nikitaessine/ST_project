@@ -67,6 +67,8 @@ User Can Create Private Post
     Element Should Be Visible    ${PRIVATE_ICON}    timeout=30s
     Sleep    2 seconds
     Close Browser
+
+# kommentti    
 User Gets Error When Login With Wrong Credentials
     [Documentation]    Verify that a user can successfully login to the application.
     [Tags]    smoke
