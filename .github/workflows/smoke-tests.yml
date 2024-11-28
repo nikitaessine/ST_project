@@ -25,8 +25,3 @@ jobs:
         run: |
           robot --variable BROWSER:chrome --include smoke -d results e2e_tests/tests/
       
-      - name: Upload Test Report
-        uses: actions/upload-artifact@v4.3.1
-        with:
-          name: rf-results
-          path: results/
