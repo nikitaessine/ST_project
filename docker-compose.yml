@@ -62,6 +62,7 @@ services:
       - backend
   graph:
     image: "neo4j:4.3.2-community"
+    platform: linux/amd64
     restart: unless-stopped
     expose:
       - 7474
@@ -70,5 +71,3 @@ services:
       - NEO4J_AUTH=neo4j/secret
     volumes:
       - ./_data/neo4j-data:/data
-
-
