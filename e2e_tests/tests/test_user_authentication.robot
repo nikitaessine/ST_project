@@ -10,7 +10,7 @@ ${BASE_URL}       http://localhost:80
 User Can Register To The Application
     [Documentation]    Verify that a user can successfully register to the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/register    
+    Open Browser    ${BASE_URL}/register    ${BROWSER}
     Input Registration Details
     Submit Registration Form
     Close Browser
@@ -18,7 +18,7 @@ User Can Register To The Application
 User Can Login To The Application
     [Documentation]    Verify that a user can successfully login to the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    
+    Open Browser    ${BASE_URL}/login    ${BROWSER}
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Publish    timeout=10s
@@ -27,7 +27,7 @@ User Can Login To The Application
 User Can Logout From The Application
     [Documentation]    Verify that a user can successfully logout from the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    
+    Open Browser    ${BASE_URL}/login    ${BROWSER}
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Publish    timeout=10s
