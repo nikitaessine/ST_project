@@ -53,6 +53,20 @@ User Can Create Public Post
     Sleep    2 seconds
     Close Browser
 
+User Can Create Private Post
+    [Documentation]    Verify that a user can successfully create a private post.
+    [Tags]    smoke
+    Open Browser    ${BASE_URL}/login 
+    Input Login Details
+    Submit Login Form
+    Wait Until Page Contains    Publish    timeout=30s
+    Type Text In Post And Choose Private
+    Sleep    3 seconds
+    Press Publish Button
+    Sleep    3 seconds
+    Element Should Be Visible    ${PRIVATE_ICON}    timeout=30s
+    Sleep    2 seconds
+    Close Browser
 User Gets Error When Login With Wrong Credentials
     [Documentation]    Verify that a user can successfully login to the application.
     [Tags]    smoke
@@ -105,5 +119,11 @@ Press Publish Button
 Type Text In Post And Choose Public
     [Documentation]    Type text in the post.
     Input Text    ${POST_TEXT}    This is a public post.
-    Select From List By Value    xpath=/html/body/div/div[2]/div[2]/div/div[2]/form/div/div/div/select    PUBLIC
+    Select From List By Value    xpath=/html/body/div/div[2]/div[2]/div/div[2]/form/div/div/div/select    public
+    Sleep    3 seconds
+
+Type Text In Post And Choose Private
+    [Documentation]    Type text in the post.
+    Input Text    ${POST_TEXT}    This is a private post.
+    Select From List By Label    xpath=//select[@name='privacy']    friends
     Sleep    3 seconds

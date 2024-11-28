@@ -1,0 +1,17 @@
+1732801238960	geckodriver	INFO	Listening on 127.0.0.1:56135
+1732801238973	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/Use ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/nw/7m20wcgj22165y8346py4_d00000gn/T/rust_mozprofileIbD9eD"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1732801239194	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
+1732801239389	Marionette	INFO	Listening on port 56144
+WebDriver BiDi listening on ws://127.0.0.1:56136
+Read port: 56144
+1732801239521	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+DevTools listening on ws://127.0.0.1:56136/devtools/browser/40b0fc71-603f-4fe0-be42-8735fb183cfd
+console.error: ({})
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1732801261321	Marionette	INFO	Stopped listening on port 56144
