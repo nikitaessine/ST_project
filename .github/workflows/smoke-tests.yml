@@ -12,6 +12,12 @@ jobs:
         with:
           python-version: 3.12.2
       
+      - name: Install Chrome Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libnss3 libxss1 libappindicator3-1 fonts-liberation libasound2
+  
+      
       - name: Install Docker Compose
         run: |
           sudo apt-get update
