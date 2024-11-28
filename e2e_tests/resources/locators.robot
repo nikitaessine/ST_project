@@ -7,3 +7,5 @@ ${LOGIN_EMAIL}              xpath=/html/body/div/div[2]/div/div/form/fieldset/di
 ${LOGIN_PASSWORD}           xpath=/html/body/div/div[2]/div/div/form/fieldset/div[2]/div/input
 ${LOGIN_BUTTON}             xpath=/html/body/div/div[2]/div/div/form/button[1]
 ${LOGOUT_BUTTON}            xpath=/html/body/div/div[1]/div[2]/div/button[3]
+${POST_TEXT}                xpath=/html/body/div/div[2]/div[2]/div/div[2]/form/fieldset/div/div/textarea
+${PUBLISH_BUTTON}           xpath=/html/body/div/div[2]/div[2]/div/div[2]/form/div/button

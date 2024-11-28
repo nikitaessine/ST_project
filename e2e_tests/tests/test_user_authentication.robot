@@ -38,6 +38,21 @@ User Can Logout From The Application
     Sleep    3 seconds
     Close Browser
 
+User Can Create Public Post 
+    [Documentation]    Verify that a user can successfully create a public post.
+    [Tags]    smoke
+    Open Browser    ${BASE_URL}/login    headlessfirefox
+    Input Login Details
+    Submit Login Form
+    Wait Until Page Contains    Publish    timeout=30s
+    Type Text In Post And Choose Public
+    Sleep    3 seconds
+    Press Publish Button
+    Sleep    3 seconds
+    Wait Until Page Contains    This is a public post.    timeout=30s
+    Sleep    2 seconds
+    Close Browser
+
 User Gets Error When Login With Wrong Credentials
     [Documentation]    Verify that a user can successfully login to the application.
     [Tags]    smoke
@@ -83,3 +98,12 @@ Submit Login Form
 Press Logout Button
     [Documentation]    Press the logout button.
     Click Button    ${LOGOUT_BUTTON}
+
+Press Publish Button
+    [Documentation]    Press the publish button.
+    Click Button    ${PUBLISH_BUTTON}
+Type Text In Post And Choose Public
+    [Documentation]    Type text in the post.
+    Input Text    ${POST_TEXT}    This is a public post.
+    Select From List By Value    xpath=/html/body/div/div[2]/div[2]/div/div[2]/form/div/div/div/select    PUBLIC
+    Sleep    3 seconds
