@@ -23,7 +23,7 @@ jobs:
       - name: Setup Workspace
         run: |
           python -m venv .venv
-          source e2e_tests/venv/bin/activate
+          source .venv/bin/activate
           pip install --upgrade robotframework-seleniumlibrary
       
       - name: Run Smoke Tests
