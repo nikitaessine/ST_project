@@ -17,3 +17,8 @@ JavaScript error: resource:///modules/sessionstore/SessionStore.sys.mjs, line 36
 JavaScript error: , line 0: NotFoundError: No such JSProcessActor 'DevToolsProcess'
 JavaScript error: , line 0: NotFoundError: No such JSProcessActor 'DevToolsProcess'
 JavaScript error: , line 0: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+1732873626104	Marionette	INFO	Stopped listening on port 52684
+console.error: "Failed to fetch https://spocs.getpocket.com/user:" "NetworkError when attempting to fetch resource."
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+console.error: ({})
+console.error: ({})

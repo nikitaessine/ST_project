@@ -2421,34 +2421,4 @@ function addExecutionLog(main) {
         </tr>
         {{/if}}
       </table>
-    </div>
-  </div>
-</script>
-
-<script type="text/x-jquery-tmpl" id="messageTemplate">
-  <table id="${id}" class="messages ${level.toLowerCase()}-message">
-    <tr class="message-row">
-      <td class="time">${time}</td>
-      <td class="${level.toLowerCase()} level"><span class="label ${level.toLowerCase()}">${level}</span></td>
-      <td class="message">{{html text}}</td>
-      <td class="select-message" onclick="javascript:selectMessage('${id}')" title="Select message text">
-        <div></div>
-      </td>
-    </tr>
-  </table>
-</script>
-
-<script type="text/x-jquery-tmpl" id="logLevelSelectorTemplate">
-  <div id="log-level-selector">
-  Log level:
-    <select onchange="logLevelSelected(this.options[selectedIndex].value)">
-      <option value="3">WARN</option>
-      <option value="2">INFO</option>
-      <option value="1">DEBUG</option>
-      {{if showTrace()}}<option value="0">TRACE</option>{{/if}}
-    </select>
-  </div>
-</script>
-
-</body>
-</html>
+    

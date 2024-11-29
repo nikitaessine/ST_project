@@ -56,7 +56,7 @@ User Can Create Public Post
 User Can Create Private Post
     [Documentation]    Verify that a user can successfully create a private post.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login 
+    Open Browser    ${BASE_URL}/login    headlessfirefox 
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Publish    timeout=30s
