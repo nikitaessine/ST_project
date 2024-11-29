@@ -1,2 +1,4 @@
 *** Variables ***
-${BROWSER}       headles
+${BROWSER}       headlesschrome
+
+

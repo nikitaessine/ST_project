@@ -121,7 +121,7 @@ Press Publish Button
 Type Text In Post And Choose Public
     [Documentation]    Type text in the post.
     Input Text    ${POST_TEXT}    This is a public post.
-    Select From List By Value    xpath=/html/body/div/div[2]/div[2]/div/div[2]/form/div/div/div/select    public
+    Select From List By Label    xpath=//select[@name='privacy']    public
     Sleep    3 seconds
 
 Type Text In Post And Choose Private
