@@ -10,7 +10,7 @@ ${BASE_URL}       http://localhost
 User Can Register To The Application
     [Documentation]    Verify that a user can successfully register to the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/register    headlesschrome       
+    Open Browser    ${BASE_URL}/register    headlessfirefox       
     Input Registration Details
     Submit Registration Form
     Wait Until Page Does Not Contain    Register    timeout=10s
@@ -19,7 +19,7 @@ User Can Register To The Application
 User Can Login To The Application
     [Documentation]    Verify that a user can successfully login to the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    headlesschrome
+    Open Browser    ${BASE_URL}/login    headlessfirefox
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
@@ -28,7 +28,7 @@ User Can Login To The Application
 User Can Logout From The Application
     [Documentation]    Verify that a user can successfully logout from the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    headlesschrome
+    Open Browser    ${BASE_URL}/login    headlessfirefox
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
@@ -42,7 +42,7 @@ User Can Logout From The Application
 User Can Create Public Post 
     [Documentation]    Verify that a user can successfully create a public post.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    headlesschrome
+    Open Browser    ${BASE_URL}/login    headlessfirefox
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
@@ -57,7 +57,7 @@ User Can Create Public Post
 User Can Create Private Post
     [Documentation]    Verify that a user can successfully create a private post.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    headlesschrome 
+    Open Browser    ${BASE_URL}/login    headlessfirefox 
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
