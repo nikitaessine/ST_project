@@ -1,93 +1,307 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.10.12 on darwin)" generated="2024-12-05T13:40:04.066317" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.10.12 on darwin)" generated="2024-12-05T16:07:14.734191" rpa="false" schemaversion="5">
 <suite id="s1" name="Test User Authentication" source="/Users/nikita/Desktop/ST_project2/e2e_tests/tests/test_user_authentication.robot">
-<test id="s1-t1" name="User Can Register To The Application" line="10">
+<test id="s1-t1" name="User Is Able To See Post Made By Another User" line="82">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-12-05T13:40:04.180147" level="INFO">Opening browser 'firefox' to base url 'http://localhost:80/register'.</msg>
-<arg>${BASE_URL}/register</arg>
+<msg time="2024-12-05T16:07:14.838986" level="INFO">Opening browser 'firefox' to base url 'http://localhost/login'.</msg>
+<arg>${BASE_URL}/login</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-12-05T13:40:04.179914" elapsed="1.548042"/>
+<status status="PASS" start="2024-12-05T16:07:14.838770" elapsed="1.594414"/>
 </kw>
-<kw name="Input Registration Details">
+<kw name="Input Login Details">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-05T16:07:19.436992" level="INFO">Slept 3 seconds.</msg>
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-05T16:07:16.435386" elapsed="3.002920"/>
+</kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-05T13:40:05.731837" level="INFO">Typing text 'user1' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[2]/div/input'.</msg>
+<msg time="2024-12-05T16:07:19.440726" level="INFO">Typing text 'testuser@example.com' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[1]/div/input'.</msg>
+<arg>${LOGIN_EMAIL}</arg>
+<arg>testuser@example.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-05T16:07:19.439171" elapsed="0.061806"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-05T16:07:22.502220" level="INFO">Slept 3 seconds.</msg>
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-05T16:07:19.501256" elapsed="3.002153"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:07:22.506079" level="INFO">Typing text 'TestPassword123!' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[2]/div/input'.</msg>
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>TestPassword123!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-05T16:07:22.504661" elapsed="0.029708"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-05T16:07:25.537045" level="INFO">Slept 3 seconds.</msg>
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-05T16:07:22.534740" elapsed="3.003511"/>
+</kw>
+<doc>Fill the login form with valid user details.</doc>
+<status status="PASS" start="2024-12-05T16:07:16.434664" elapsed="9.104345"/>
+</kw>
+<kw name="Submit Login Form">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:07:25.541799" level="INFO">Clicking button 'xpath=/html/body/div/div[2]/div/div/form/button[1]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-05T16:07:25.541140" elapsed="0.247063"/>
+</kw>
+<doc>Submit the login form.</doc>
+<status status="PASS" start="2024-12-05T16:07:25.540169" elapsed="0.248658"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Log out</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-05T16:07:25.789593" elapsed="0.210848"/>
+</kw>
+<kw name="Type Text In Post And Choose Public">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:07:26.001552" level="INFO">Typing text 'This is a public post.' into text field 'xpath=/html/body/div/div[2]/div[2]/div/div[2]/form/fieldset/div/div/textarea'.</msg>
+<arg>${POST_TEXT}</arg>
+<arg>This is a public post.</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-05T16:07:26.001258" elapsed="0.018795"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:07:26.020647" level="INFO">Selecting options from selection list 'xpath=//select[@name='privacy']' by label public.</msg>
+<arg>xpath=//select[@name='privacy']</arg>
+<arg>public</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-12-05T16:07:26.020353" elapsed="0.048918"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-05T16:07:29.071975" level="INFO">Slept 3 seconds.</msg>
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-05T16:07:26.069456" elapsed="3.003581"/>
+</kw>
+<doc>Type text in the post.</doc>
+<status status="PASS" start="2024-12-05T16:07:26.000880" elapsed="3.072820"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-05T16:07:32.077886" level="INFO">Slept 3 seconds.</msg>
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-05T16:07:29.074701" elapsed="3.004267"/>
+</kw>
+<kw name="Press Publish Button">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:07:32.082430" level="INFO">Clicking button 'xpath=/html/body/div/div[2]/div[2]/div/div[2]/form/div/button'.</msg>
+<arg>${PUBLISH_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-05T16:07:32.081683" elapsed="0.233411"/>
+</kw>
+<doc>Press the publish button.</doc>
+<status status="PASS" start="2024-12-05T16:07:32.080464" elapsed="0.235226"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-05T16:07:35.319004" level="INFO">Slept 3 seconds.</msg>
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-05T16:07:32.316218" elapsed="3.003795"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>This is a public post.</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-05T16:07:35.321299" elapsed="0.007992"/>
+</kw>
+<kw name="Press Logout Button">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:07:35.331258" level="INFO">Clicking button 'xpath=/html/body/div/div[1]/div[2]/div/button[3]'.</msg>
+<arg>${LOGOUT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-05T16:07:35.330771" elapsed="0.113941"/>
+</kw>
+<doc>Press the logout button.</doc>
+<status status="PASS" start="2024-12-05T16:07:35.330112" elapsed="0.114833"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:07:35.445415" level="INFO">Opening url 'http://localhost/register'</msg>
+<arg>${BASE_URL}/register</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-12-05T16:07:35.445177" elapsed="0.069687"/>
+</kw>
+<kw name="Input Registration Details For Another User">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:07:35.516462" level="INFO">Typing text 'another' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[2]/div/input'.</msg>
 <arg>${REGISTRATION_USERNAME}</arg>
-<arg>user1</arg>
+<arg>another</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-05T13:40:05.729770" elapsed="0.057896"/>
+<status status="PASS" start="2024-12-05T16:07:35.516028" elapsed="0.029979"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-12-05T13:40:08.788939" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-12-05T16:07:38.547081" level="INFO">Slept 3 seconds.</msg>
 <arg>3 seconds</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-12-05T13:40:05.787879" elapsed="3.001973"/>
+<status status="PASS" start="2024-12-05T16:07:35.546278" elapsed="3.002123"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-05T13:40:08.791516" level="INFO">Typing text 'user1@example.com' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[1]/div/input'.</msg>
+<msg time="2024-12-05T16:07:38.551202" level="INFO">Typing text 'another@example.com' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[1]/div/input'.</msg>
 <arg>${REGISTRATION_EMAIL}</arg>
-<arg>user1@example.com</arg>
+<arg>another@example.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-05T13:40:08.790593" elapsed="0.032683"/>
+<status status="PASS" start="2024-12-05T16:07:38.549658" elapsed="0.032800"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-12-05T13:40:11.824335" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-12-05T16:07:41.583781" level="INFO">Slept 3 seconds.</msg>
 <arg>3 seconds</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-12-05T13:40:08.823619" elapsed="3.001802"/>
+<status status="PASS" start="2024-12-05T16:07:38.582790" elapsed="3.001519"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-05T13:40:11.827599" level="INFO">Typing text 'TestPassword123!' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[3]/div/input'.</msg>
+<msg time="2024-12-05T16:07:41.586391" level="INFO">Typing text 'TestPassword123!' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[3]/div/input'.</msg>
 <arg>${REGISTRATION_PASSWORD}</arg>
 <arg>TestPassword123!</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-05T13:40:11.826372" elapsed="0.027938"/>
+<status status="PASS" start="2024-12-05T16:07:41.585375" elapsed="0.023178"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-12-05T13:40:14.855239" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-12-05T16:07:44.609674" level="INFO">Slept 3 seconds.</msg>
 <arg>3 seconds</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-12-05T13:40:11.854664" elapsed="3.001263"/>
+<status status="PASS" start="2024-12-05T16:07:41.608948" elapsed="3.001925"/>
 </kw>
 <doc>Fill the registration form with valid user details.</doc>
-<status status="PASS" start="2024-12-05T13:40:05.729085" elapsed="9.127232"/>
+<status status="PASS" start="2024-12-05T16:07:35.515532" elapsed="9.096238"/>
 </kw>
 <kw name="Submit Registration Form">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-12-05T13:40:14.858905" level="INFO">Clicking button 'xpath=/html/body/div/div[2]/div/div/form/button[1]'.</msg>
+<msg time="2024-12-05T16:07:44.616021" level="INFO">Clicking button 'xpath=/html/body/div/div[2]/div/div/form/button[1]'.</msg>
 <arg>${REGISTER_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-05T13:40:14.858178" elapsed="0.254261"/>
+<status status="PASS" start="2024-12-05T16:07:44.615136" elapsed="0.242870"/>
 </kw>
 <doc>Submit the registration form.</doc>
-<status status="PASS" start="2024-12-05T13:40:14.857213" elapsed="0.255842"/>
+<status status="PASS" start="2024-12-05T16:07:44.613577" elapsed="0.245012"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:07:52.206953" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: Browsing context has been discarded
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:679:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:515:13
+assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
+GeckoDriver.prototype.takeScreenshot@chrome://remote/content/marionette/driver.sys.mjs:2575:15
+despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</msg>
+<msg time="2024-12-05T16:07:52.207665" level="FAIL">NoSuchWindowException: Message: Browsing context has been discarded
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:679:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:515:13
+assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
+GeckoDriver.prototype.findElements@chrome://remote/content/marionette/driver.sys.mjs:1649:15
+despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</msg>
+<arg>Register</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="FAIL" start="2024-12-05T16:07:44.859436" elapsed="7.352544">NoSuchWindowException: Message: Browsing context has been discarded
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:679:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:515:13
+assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
+GeckoDriver.prototype.findElements@chrome://remote/content/marionette/driver.sys.mjs:1649:15
+despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</status>
+</kw>
+<kw name="Input Login Details For Another User">
+<doc>Fill the login form with valid user details.</doc>
+<status status="NOT RUN" start="2024-12-05T16:07:52.212451" elapsed="0.000120"/>
+</kw>
+<kw name="Submit Login Form">
+<doc>Submit the login form.</doc>
+<status status="NOT RUN" start="2024-12-05T16:07:52.212805" elapsed="0.000080"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>email already taken</arg>
-<arg>timeout=10s</arg>
+<arg>Log out</arg>
+<arg>timeout=30s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-12-05T13:40:15.113973" elapsed="0.210285"/>
+<status status="NOT RUN" start="2024-12-05T16:07:52.213172" elapsed="0.000116"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>This is private post.</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2024-12-05T16:07:52.213538" elapsed="0.000101"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>testuser</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2024-12-05T16:07:52.213812" elapsed="0.000086"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-12-05T13:40:15.325068" elapsed="0.426067"/>
+<status status="NOT RUN" start="2024-12-05T16:07:52.214374" elapsed="0.000118"/>
 </kw>
-<doc>Verify that a user can successfully register to the application.</doc>
+<doc>Verify that a user can see a post made by another user.</doc>
 <tag>smoke</tag>
-<status status="PASS" start="2024-12-05T13:40:04.179065" elapsed="11.572511"/>
+<status status="FAIL" start="2024-12-05T16:07:14.837978" elapsed="37.376767">NoSuchWindowException: Message: Browsing context has been discarded
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:679:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:515:13
+assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
+GeckoDriver.prototype.findElements@chrome://remote/content/marionette/driver.sys.mjs:1649:15
+despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</status>
 </test>
-<status status="PASS" start="2024-12-05T13:40:04.068281" elapsed="11.683851"/>
+<status status="FAIL" start="2024-12-05T16:07:14.736296" elapsed="37.479120"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">smoke</stat>
+<stat pass="0" fail="1" skip="0">smoke</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Test User Authentication">Test User Authentication</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test User Authentication">Test User Authentication</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2024-12-05T16:07:52.206953" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: Browsing context has been discarded
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+NoSuchWindowError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:679:5
+assert.that/&lt;@chrome://remote/content/shared/webdriver/Assert.sys.mjs:515:13
+assert.open@chrome://remote/content/shared/webdriver/Assert.sys.mjs:147:4
+GeckoDriver.prototype.takeScreenshot@chrome://remote/content/marionette/driver.sys.mjs:2575:15
+despatch@chrome://remote/content/marionette/server.sys.mjs:318:40
+execute@chrome://remote/content/marionette/server.sys.mjs:289:16
+onPacket/&lt;@chrome://remote/content/marionette/server.sys.mjs:262:20
+onPacket@chrome://remote/content/marionette/server.sys.mjs:263:9
+_onJSONObjectReady/&lt;@chrome://remote/content/marionette/transport.sys.mjs:494:20
+</msg>
 </errors>
 </robot>

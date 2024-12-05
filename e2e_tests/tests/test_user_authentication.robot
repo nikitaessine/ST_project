@@ -82,7 +82,7 @@ User Gets Error When Login With Wrong Credentials
 User Is Able To See Post Made By Another User
     [Documentation]    Verify that a user can see a post made by another user.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    headlessfirefox
+    Open Browser    ${BASE_URL}/login    
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
@@ -97,6 +97,7 @@ User Is Able To See Post Made By Another User
     Submit Registration Form
     Wait Until Page Does Not Contain    Register    timeout=10s
     Input Login Details For Another User
+    Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
     Wait Until Page Contains    This is private post.    timeout=30s
     Wait Until Page Contains    testuser    timeout=30s
