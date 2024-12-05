@@ -103,6 +103,7 @@ User Is Able To See Post Made By Another User
     Wait Until Page Contains    testuser    timeout=30s
     Close Browser
 
+
 *** Keywords ***
 Input Registration Details
     [Documentation]    Fill the registration form with valid user details.

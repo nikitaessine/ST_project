@@ -70,4 +70,4 @@ services:
     environment:
       - NEO4J_AUTH=neo4j/secret
     volumes:
-      - .
+      - ./_data/neo4j-data:/data
