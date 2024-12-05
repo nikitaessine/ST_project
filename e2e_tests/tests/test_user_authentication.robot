@@ -4,13 +4,13 @@ Resource          ../resources/locators.robot
 Resource          ../resources/variables.robot
 
 *** Variables ***
-${BASE_URL}       http://localhost:80
+${BASE_URL}       http://localhost
 
 *** Test Cases ***
 User Can Register To The Application
     [Documentation]    Verify that a user can successfully register to the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/register    headlesschrome    
+    Open Browser    ${BASE_URL}/register       
     Input Registration Details
     Submit Registration Form
     Wait Until Page Does Not Contain    Register    timeout=10s
@@ -19,7 +19,7 @@ User Can Register To The Application
 User Can Login To The Application
     [Documentation]    Verify that a user can successfully login to the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    headlesschrome
+    Open Browser    ${BASE_URL}/login    
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
@@ -28,21 +28,21 @@ User Can Login To The Application
 User Can Logout From The Application
     [Documentation]    Verify that a user can successfully logout from the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    headlesschrome
+    Open Browser    ${BASE_URL}/login    
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
     Sleep    3 seconds
     Press Logout Button
     Sleep    3 seconds
-    Wait Until Page Contains    Log out    timeout=30s
+    Wait Until Page Contains    Log in    timeout=30s
     Sleep    3 seconds
     Close Browser
 
 User Can Create Public Post 
     [Documentation]    Verify that a user can successfully create a public post.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    headlesschrome
+    Open Browser    ${BASE_URL}/login    
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
@@ -57,7 +57,7 @@ User Can Create Public Post
 User Can Create Private Post
     [Documentation]    Verify that a user can successfully create a private post.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    headlesschrome 
+    Open Browser    ${BASE_URL}/login     
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
@@ -73,7 +73,7 @@ User Can Create Private Post
 User Gets Error When Login With Wrong Credentials
     [Documentation]    Verify that a user can successfully login to the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    headlesschrome
+    Open Browser    ${BASE_URL}/login    
     Wrong Input Login Details
     Submit Login Form
     Wait Until Page Contains    Invalid email/password combination
