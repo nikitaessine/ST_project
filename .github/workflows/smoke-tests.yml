@@ -21,10 +21,13 @@ jobs:
   
       - name: Install ChromeDriver
         run: |
-          CHROME_DRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-          wget https://chromedriver.storage.googleapis.com/${CHROME_DRIVER_VERSION}/chromedriver_linux64.zip
+          CHROME_VERSION=$(google-chrome --version | grep -oP "\d+\.\d+\.\d+")
+          # Download matching ChromeDriver
+          DRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION%%.*})
+          wget https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip
           unzip chromedriver_linux64.zip -d /usr/local/bin/
           rm chromedriver_linux64.zip
+          chromedriver --version
       
       - name: Install Chrome Dependencies
         run: |
