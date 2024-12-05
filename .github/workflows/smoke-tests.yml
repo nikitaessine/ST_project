@@ -13,16 +13,16 @@ jobs:
         with:
           python-version: 3.12.2
       
-      - name: Setup Chrome Browser
-        uses: browser-actions/setup-chrome@v1
+      - name: Setup Firefox
+        id: setup-firefox
+        uses: browser-actions/setup-firefox@v1
         with:
-          chrome-version: 131
-          install-chromedriver: true
-      
-      - name: Install Chrome Dependencies
+          firefox-version: latest
+
+      - name: Verify Firefox Installation
         run: |
-          sudo apt-get update
-          sudo apt-get install -y libnss3 libxss1 libappindicator3-1 fonts-liberation libasound2
+          echo Installed Firefox version: ${{ steps.setup-firefox.outputs.firefox-version }}
+          ${{ steps.setup-firefox.outputs.firefox-path }} --version
   
       - name: Install Docker Compose
         run: |
@@ -41,4 +41,4 @@ jobs:
       - name: Run Smoke Tests
         run: |
           source .venv/bin/activate
-          robot --variable BROWSER:headlesschrome --variable BROWSER_OPTIONS:"disable-dev-shm-usage" --include smoke -d results e2e_tests/tests/
+          robot --variable BROWSER:headlessfirefox --variable BROWSER_OPTIONS:"--disable-dev-shm-usage" --include smoke -d results e2e_tests/tests/
