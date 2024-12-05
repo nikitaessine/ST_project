@@ -82,7 +82,7 @@ User Gets Error When Login With Wrong Credentials
 User Is Able To See Post Made By Another User
     [Documentation]    Verify that a user can see a post made by another user.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    
+    Open Browser    ${BASE_URL}/login    headlessfirefox
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
