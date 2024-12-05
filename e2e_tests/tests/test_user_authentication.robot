@@ -21,7 +21,7 @@ User Can Login To The Application
     Open Browser    ${BASE_URL}/login    headlessfirefox
     Input Login Details
     Submit Login Form
-    Wait Until Page Contains    Publish    timeout=30s
+    Wait Until Page Contains    Log out    timeout=30s
     Close Browser
 
 User Can Logout From The Application
@@ -30,11 +30,11 @@ User Can Logout From The Application
     Open Browser    ${BASE_URL}/login    headlessfirefox
     Input Login Details
     Submit Login Form
-    Wait Until Page Contains    Publish    timeout=30s
+    Wait Until Page Contains    Log out    timeout=30s
     Sleep    3 seconds
     Press Logout Button
     Sleep    3 seconds
-    Wait Until Page Contains    Log in    timeout=30s
+    Wait Until Page Contains    Log out    timeout=30s
     Sleep    3 seconds
     Close Browser
 
@@ -44,7 +44,7 @@ User Can Create Public Post
     Open Browser    ${BASE_URL}/login    headlessfirefox
     Input Login Details
     Submit Login Form
-    Wait Until Page Contains    Publish    timeout=30s
+    Wait Until Page Contains    Log out    timeout=30s
     Type Text In Post And Choose Public
     Sleep    3 seconds
     Press Publish Button
@@ -59,7 +59,7 @@ User Can Create Private Post
     Open Browser    ${BASE_URL}/login    headlessfirefox 
     Input Login Details
     Submit Login Form
-    Wait Until Page Contains    Publish    timeout=30s
+    Wait Until Page Contains    Log out    timeout=30s
     Type Text In Post And Choose Private
     Sleep    3 seconds
     Press Publish Button

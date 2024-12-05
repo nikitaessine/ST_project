@@ -2,3 +2,5 @@
 /_data-dev/
 /e2e_tests/venv/
 /e2e_tests/results/
+geckodriver-*
+selenium-screenshot-*
