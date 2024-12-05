@@ -10,16 +10,16 @@ ${BASE_URL}       http://localhost:80
 User Can Register To The Application
     [Documentation]    Verify that a user can successfully register to the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/register    headlessfirefox    
+    Open Browser    ${BASE_URL}/register    headlesschrome    
     Input Registration Details
     Submit Registration Form
-    Wait Until Page Contains    email already taken    timeout=10s
+    Wait Until Page Does Not Contain    Register    timeout=10s
     Close Browser
 
 User Can Login To The Application
     [Documentation]    Verify that a user can successfully login to the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    headlessfirefox
+    Open Browser    ${BASE_URL}/login    headlesschrome
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
@@ -28,7 +28,7 @@ User Can Login To The Application
 User Can Logout From The Application
     [Documentation]    Verify that a user can successfully logout from the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    headlessfirefox
+    Open Browser    ${BASE_URL}/login    headlesschrome
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
@@ -42,7 +42,7 @@ User Can Logout From The Application
 User Can Create Public Post 
     [Documentation]    Verify that a user can successfully create a public post.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    headlessfirefox
+    Open Browser    ${BASE_URL}/login    headlesschrome
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
@@ -57,7 +57,7 @@ User Can Create Public Post
 User Can Create Private Post
     [Documentation]    Verify that a user can successfully create a private post.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    headlessfirefox 
+    Open Browser    ${BASE_URL}/login    headlesschrome 
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
@@ -73,7 +73,7 @@ User Can Create Private Post
 User Gets Error When Login With Wrong Credentials
     [Documentation]    Verify that a user can successfully login to the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    headlessfirefox
+    Open Browser    ${BASE_URL}/login    headlesschrome
     Wrong Input Login Details
     Submit Login Form
     Wait Until Page Contains    Invalid email/password combination
@@ -82,9 +82,9 @@ User Gets Error When Login With Wrong Credentials
 *** Keywords ***
 Input Registration Details
     [Documentation]    Fill the registration form with valid user details.
-    Input Text    ${REGISTRATION_USERNAME}    user1
+    Input Text    ${REGISTRATION_USERNAME}    testuser
     Sleep    3 seconds
-    Input Text    ${REGISTRATION_EMAIL}       user1@example.com
+    Input Text    ${REGISTRATION_EMAIL}       testuser@example.com
     Sleep    3 seconds
     Input Text    ${REGISTRATION_PASSWORD}    TestPassword123!
     Sleep    3 seconds
