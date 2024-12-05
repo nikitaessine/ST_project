@@ -6,31 +6,32 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
+      
       - name: Setup Python
         uses: actions/setup-python@v5.0.0
         with:
           python-version: 3.12.2
-
+      
       - name: Install Chrome
         run: |
           sudo apt-get update
           sudo apt-get install -y wget
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get -f install -y
-
+  
       - name: Install ChromeDriver
         run: |
           CHROME_DRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
           wget https://chromedriver.storage.googleapis.com/${CHROME_DRIVER_VERSION}/chromedriver_linux64.zip
           unzip chromedriver_linux64.zip -d /usr/local/bin/
           rm chromedriver_linux64.zip
-
+      
       - name: Install Chrome Dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y libnss3 libxss1 libappindicator3-1 fonts-liberation libasound2
-
+  
+      
       - name: Install Docker Compose
         run: |
           sudo apt-get update
@@ -38,15 +39,15 @@ jobs:
 
       - name: Run docker-compose
         run: docker-compose up -d
-
+      
       - name: Setup Workspace
         run: |
           python -m venv .venv
           source .venv/bin/activate
-          pip install --upgrade pip
-          pip install -r requirements.txt
-
+          pip install --upgrade robotframework-seleniumlibrary
+      
       - name: Run Smoke Tests
         run: |
           source .venv/bin/activate
           robot --variable BROWSER:headlesschrome --variable BROWSER_OPTIONS:"disable-dev-shm-usage" --include smoke -d results e2e_tests/tests/
+      
