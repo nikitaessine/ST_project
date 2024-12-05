@@ -10,9 +10,10 @@ ${BASE_URL}       http://localhost:80
 User Can Register To The Application
     [Documentation]    Verify that a user can successfully register to the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/register    headlessfirefox
+    Open Browser    ${BASE_URL}/register    headlessfirefox    
     Input Registration Details
     Submit Registration Form
+    Wait Until Page Does Not Contain    Register    timeout=10s
     Close Browser
 
 User Can Login To The Application
@@ -81,9 +82,9 @@ User Gets Error When Login With Wrong Credentials
 *** Keywords ***
 Input Registration Details
     [Documentation]    Fill the registration form with valid user details.
-    Input Text    ${REGISTRATION_USERNAME}    testuser
+    Input Text    ${REGISTRATION_USERNAME}    user1
     Sleep    3 seconds
-    Input Text    ${REGISTRATION_EMAIL}       testuser@example.com
+    Input Text    ${REGISTRATION_EMAIL}       user1@example.com
     Sleep    3 seconds
     Input Text    ${REGISTRATION_PASSWORD}    TestPassword123!
     Sleep    3 seconds
