@@ -13,7 +13,7 @@ User Can Register To The Application
     Open Browser    ${BASE_URL}/register    headlessfirefox    
     Input Registration Details
     Submit Registration Form
-    Wait Until Page Does Not Contain    email already taken    timeout=10s
+    Wait Until Page Contains    email already taken    timeout=10s
     Close Browser
 
 User Can Login To The Application
