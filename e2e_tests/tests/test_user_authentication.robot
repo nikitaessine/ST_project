@@ -73,10 +73,33 @@ User Can Create Private Post
 User Gets Error When Login With Wrong Credentials
     [Documentation]    Verify that a user can successfully login to the application.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login    headlesschrome
+    Open Browser    ${BASE_URL}/login    headlessfirefox
     Wrong Input Login Details
     Submit Login Form
     Wait Until Page Contains    Invalid email/password combination
+    Close Browser
+
+User Is Able To See Post Made By Another User
+    [Documentation]    Verify that a user can see a post made by another user.
+    [Tags]    smoke
+    Open Browser    ${BASE_URL}/login    headlessfirefox
+    Input Login Details
+    Submit Login Form
+    Wait Until Page Contains    Log out    timeout=30s
+    Type Text In Post And Choose Public
+    Sleep    3 seconds
+    Press Publish Button
+    Sleep    3 seconds
+    Wait Until Page Contains    This is a public post.    timeout=30s
+    Press Logout Button
+    Go To    ${BASE_URL}/register
+    Input Registration Details For Another User
+    Submit Registration Form
+    Wait Until Page Does Not Contain    Register    timeout=10s
+    Input Login Details For Another User
+    Wait Until Page Contains    Log out    timeout=30s
+    Wait Until Page Contains    This is private post.    timeout=30s
+    Wait Until Page Contains    testuser    timeout=30s
     Close Browser
 
 *** Keywords ***
@@ -89,10 +112,27 @@ Input Registration Details
     Input Text    ${REGISTRATION_PASSWORD}    TestPassword123!
     Sleep    3 seconds
 
+Input Registration Details For Another User
+    [Documentation]    Fill the registration form with valid user details.
+    Input Text    ${REGISTRATION_USERNAME}    another
+    Sleep    3 seconds
+    Input Text    ${REGISTRATION_EMAIL}       another@example.com
+    Sleep    3 seconds
+    Input Text    ${REGISTRATION_PASSWORD}    TestPassword123!
+    Sleep    3 seconds
+
 Input Login Details
     [Documentation]    Fill the login form with valid user details.
     Sleep    3 seconds
     Input Text    ${LOGIN_EMAIL}    testuser@example.com
+    Sleep    3 seconds
+    Input Text    ${LOGIN_PASSWORD}    TestPassword123!
+    Sleep    3 seconds
+
+Input Login Details For Another User
+    [Documentation]    Fill the login form with valid user details.
+    Sleep    3 seconds
+    Input Text    ${LOGIN_EMAIL}    another@example.com
     Sleep    3 seconds
     Input Text    ${LOGIN_PASSWORD}    TestPassword123!
     Sleep    3 seconds
