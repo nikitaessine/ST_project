@@ -39,13 +39,6 @@ jobs:
       - name: Run docker-compose
         run: docker-compose up -d
 
-      - name: Wait for Services
-        run: |
-          while ! docker-compose logs | grep -q "Ready for requests"; do
-            echo "Waiting for services to be ready..."
-            sleep 5
-          done
-
       - name: Setup Workspace
         run: |
           python -m venv .venv
