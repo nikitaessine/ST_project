@@ -99,7 +99,11 @@ User Is Able To See Post Made By Another User
     Input Login Details For Another User
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
-    Wait Until Page Contains    This is private post.    timeout=30s
+    Input Text    ${SEARCH_INPUT}    testuser
+    Wait Until Element Is Visible    ${DROPDOWN_CONTENT}
+    Scroll Element Into View    ${DROPDOWN_CONTENT}
+    Click Element    ${DROPDOWN_CONTENT}
+    Wait Until Page Contains    This is a public post.    timeout=30s
     Wait Until Page Contains    testuser    timeout=30s
     Close Browser
 
@@ -116,9 +120,9 @@ Input Registration Details
 
 Input Registration Details For Another User
     [Documentation]    Fill the registration form with valid user details.
-    Input Text    ${REGISTRATION_USERNAME}    another
+    Input Text    ${REGISTRATION_USERNAME}    aaa
     Sleep    3 seconds
-    Input Text    ${REGISTRATION_EMAIL}       another@example.com
+    Input Text    ${REGISTRATION_EMAIL}       aaa@example.com
     Sleep    3 seconds
     Input Text    ${REGISTRATION_PASSWORD}    TestPassword123!
     Sleep    3 seconds
@@ -134,7 +138,7 @@ Input Login Details
 Input Login Details For Another User
     [Documentation]    Fill the login form with valid user details.
     Sleep    3 seconds
-    Input Text    ${LOGIN_EMAIL}    another@example.com
+    Input Text    ${LOGIN_EMAIL}    aaa@example.com
     Sleep    3 seconds
     Input Text    ${LOGIN_PASSWORD}    TestPassword123!
     Sleep    3 seconds
@@ -163,6 +167,7 @@ Press Publish Button
     Click Button    ${PUBLISH_BUTTON}
 Type Text In Post And Choose Public
     [Documentation]    Type text in the post.
+    Sleep    3 seconds
     Input Text    ${POST_TEXT}    This is a public post.
     Select From List By Label    xpath=//select[@name='privacy']    public
     Sleep    3 seconds
