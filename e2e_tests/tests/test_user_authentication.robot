@@ -85,11 +85,8 @@ User Is Able To See Post Made By Another User
     Open Browser    ${BASE_URL}/login    headlessfirefox
     Input Login Details
     Submit Login Form
-    Wait Until Page Contains    Log out    timeout=30s
     Type Text In Post And Choose Public
-    Sleep    3 seconds
     Press Publish Button
-    Sleep    3 seconds
     Wait Until Page Contains    This is a public post.    timeout=30s
     Press Logout Button
     Go To    ${BASE_URL}/register
@@ -98,7 +95,6 @@ User Is Able To See Post Made By Another User
     Wait Until Page Does Not Contain    Register    timeout=10s
     Input Login Details For Another User
     Submit Login Form
-    Wait Until Page Contains    Log out    timeout=30s
     Input Text    ${SEARCH_INPUT}    testuser
     Wait Until Element Is Visible    ${DROPDOWN_CONTENT}
     Scroll Element Into View    ${DROPDOWN_CONTENT}
@@ -107,6 +103,7 @@ User Is Able To See Post Made By Another User
     Wait Until Page Contains    testuser    timeout=30s
     Close Browser
 
+#ko
 
 *** Keywords ***
 Input Registration Details
