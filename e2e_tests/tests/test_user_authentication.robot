@@ -103,7 +103,7 @@ User Is Able To See Post Made By Another User
     Wait Until Page Contains    testuser    timeout=30s
     Close Browser
 
-#ko
+
 
 *** Keywords ***
 Input Registration Details

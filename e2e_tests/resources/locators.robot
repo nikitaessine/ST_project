@@ -9,7 +9,4 @@ ${LOGIN_BUTTON}             xpath=/html/body/div/div[2]/div/div/form/button[1]
 ${LOGOUT_BUTTON}            xpath=/html/body/div/div[1]/div[2]/div/button[3]
 ${POST_TEXT}                xpath=/html/body/div/div[2]/div[2]/div[1]/div[2]/form/fieldset/div/div/textarea
 ${PUBLISH_BUTTON}           xpath=/html/body/div/div[2]/div[2]/div/div[2]/form/div/button
-${PRIVATE_ICON}             xpath=//i[@class='jsx-2270411553 fas mr-1 fa-user-friends']
-${SEARCH_INPUT}             xpath=//input[@class='input' and @type='search' and @placeholder='Search bunnies...']
-${DROPDOWN_CONTENT}         xpath=//div[@class='dropdown-content pt-0 pb-0']
-
+${PRIVATE_ICON}             xpath=//i[@class='jsx-2270411553 fas mr-1 fa-user-friend

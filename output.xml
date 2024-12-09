@@ -135,4 +135,172 @@
 <status status="PASS" start="2024-12-05T16:49:28.937962" elapsed="0.063811"/>
 </kw>
 <kw name="Input Registration Details For Another User">
-<kw name="Input Text" owner="Se
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:49:29.002712" level="INFO">Typing text 'aaa' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[2]/div/input'.</msg>
+<arg>${REGISTRATION_USERNAME}</arg>
+<arg>aaa</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-05T16:49:29.002476" elapsed="0.016620"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-05T16:49:32.022133" level="INFO">Slept 3 seconds.</msg>
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-05T16:49:29.019360" elapsed="3.004171"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:49:32.026562" level="INFO">Typing text 'aaa@example.com' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[1]/div/input'.</msg>
+<arg>${REGISTRATION_EMAIL}</arg>
+<arg>aaa@example.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-05T16:49:32.025065" elapsed="0.033946"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-05T16:49:35.061931" level="INFO">Slept 3 seconds.</msg>
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-05T16:49:32.059602" elapsed="3.003541"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:49:35.065295" level="INFO">Typing text 'TestPassword123!' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[3]/div/input'.</msg>
+<arg>${REGISTRATION_PASSWORD}</arg>
+<arg>TestPassword123!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-05T16:49:35.064092" elapsed="0.043696"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-05T16:49:38.110334" level="INFO">Slept 3 seconds.</msg>
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-05T16:49:35.108094" elapsed="3.004549"/>
+</kw>
+<doc>Fill the registration form with valid user details.</doc>
+<status status="PASS" start="2024-12-05T16:49:29.002167" elapsed="9.111509"/>
+</kw>
+<kw name="Submit Registration Form">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:49:38.117312" level="INFO">Clicking button 'xpath=/html/body/div/div[2]/div/div/form/button[1]'.</msg>
+<arg>${REGISTER_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-05T16:49:38.116501" elapsed="0.241426"/>
+</kw>
+<doc>Submit the registration form.</doc>
+<status status="PASS" start="2024-12-05T16:49:38.115396" elapsed="0.243082"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain" owner="SeleniumLibrary">
+<arg>Register</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" start="2024-12-05T16:49:38.359425" elapsed="0.421257"/>
+</kw>
+<kw name="Input Login Details For Another User">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-05T16:49:41.783854" level="INFO">Slept 3 seconds.</msg>
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-05T16:49:38.781896" elapsed="3.002897"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:49:41.786439" level="INFO">Typing text 'aaa@example.com' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[1]/div/input'.</msg>
+<arg>${LOGIN_EMAIL}</arg>
+<arg>aaa@example.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-05T16:49:41.785537" elapsed="0.025906"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-05T16:49:44.813683" level="INFO">Slept 3 seconds.</msg>
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-05T16:49:41.811873" elapsed="3.003040"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:49:44.817347" level="INFO">Typing text 'TestPassword123!' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[2]/div/input'.</msg>
+<arg>${LOGIN_PASSWORD}</arg>
+<arg>TestPassword123!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-05T16:49:44.815951" elapsed="0.023946"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-05T16:49:47.842022" level="INFO">Slept 3 seconds.</msg>
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-05T16:49:44.840305" elapsed="3.003244"/>
+</kw>
+<doc>Fill the login form with valid user details.</doc>
+<status status="PASS" start="2024-12-05T16:49:38.781415" elapsed="9.062991"/>
+</kw>
+<kw name="Submit Login Form">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:49:47.847509" level="INFO">Clicking button 'xpath=/html/body/div/div[2]/div/div/form/button[1]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-05T16:49:47.846725" elapsed="0.226967"/>
+</kw>
+<doc>Submit the login form.</doc>
+<status status="PASS" start="2024-12-05T16:49:47.845624" elapsed="0.228516"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Log out</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-05T16:49:48.074747" elapsed="0.209660"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:49:48.285264" level="INFO">Typing text 'testuser' into text field 'xpath=//input[@class='input' and @type='search' and @placeholder='Search bunnies...']'.</msg>
+<arg>${SEARCH_INPUT}</arg>
+<arg>testuser</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-05T16:49:48.284930" elapsed="0.020973"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DROPDOWN_CONTENT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-05T16:49:48.306699" elapsed="0.864643"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${DROPDOWN_CONTENT}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-12-05T16:49:49.171822" elapsed="0.267199"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-05T16:49:49.440548" level="INFO">Clicking element 'xpath=//div[@class='dropdown-content pt-0 pb-0']'.</msg>
+<arg>${DROPDOWN_CONTENT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-05T16:49:49.439769" elapsed="0.761435"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>This is a public post.</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-05T16:49:50.202610" elapsed="0.008759"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>testuser</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-12-05T16:49:50.212068" elapsed="0.006194"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-05T16:49:50.218941" elapsed="0.492102"/>
+</kw>
+<doc>Verify that a user can see a post made by another user.</doc>
+<tag>smoke</tag>
+<status status="PASS" start="2024-12-05T16:49:04.749148" elapsed="45.962209"/>
+</test>
+<status status="PASS" start="2024-12-05T16:49:04.637998" elapsed="46.073839"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test User Authentication">Test User Authentication</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
