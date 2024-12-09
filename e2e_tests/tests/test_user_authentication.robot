@@ -1,10 +1,8 @@
 *** Settings ***
 Library           SeleniumLibrary
-Resource          ../resources/locators.robot
 Resource          ../resources/variables.robot
+Resource          ../resources/keywords.robot
 
-*** Variables ***
-${BASE_URL}       http://localhost
 
 *** Test Cases ***
 User Can Register To The Application
@@ -32,11 +30,8 @@ User Can Logout From The Application
     Input Login Details
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
-    Sleep    3 seconds
     Press Logout Button
-    Sleep    3 seconds
     Wait Until Page Contains    Log in    timeout=30s
-    Sleep    3 seconds
     Close Browser
 
 User Can Create Public Post 
@@ -47,11 +42,8 @@ User Can Create Public Post
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
     Type Text In Post And Choose Public
-    Sleep    3 seconds
     Press Publish Button
-    Sleep    3 seconds
     Wait Until Page Contains    This is a public post.    timeout=30s
-    Sleep    2 seconds
     Close Browser
 
 User Can Create Private Post
@@ -62,11 +54,8 @@ User Can Create Private Post
     Submit Login Form
     Wait Until Page Contains    Log out    timeout=30s
     Type Text In Post And Choose Private
-    Sleep    3 seconds
     Press Publish Button
-    Sleep    3 seconds
     Element Should Be Visible    ${PRIVATE_ICON}    timeout=30s
-    Sleep    2 seconds
     Close Browser
 
 # kommentti    
@@ -102,75 +91,3 @@ User Is Able To See Post Made By Another User
     Wait Until Page Contains    This is a public post.    timeout=30s
     Wait Until Page Contains    testuser    timeout=30s
     Close Browser
-
-
-
-*** Keywords ***
-Input Registration Details
-    [Documentation]    Fill the registration form with valid user details.
-    Input Text    ${REGISTRATION_USERNAME}    testuser
-    Sleep    3 seconds
-    Input Text    ${REGISTRATION_EMAIL}       testuser@example.com
-    Sleep    3 seconds
-    Input Text    ${REGISTRATION_PASSWORD}    TestPassword123!
-    Sleep    3 seconds
-
-Input Registration Details For Another User
-    [Documentation]    Fill the registration form with valid user details.
-    Input Text    ${REGISTRATION_USERNAME}    aaa
-    Sleep    3 seconds
-    Input Text    ${REGISTRATION_EMAIL}       aaa@example.com
-    Sleep    3 seconds
-    Input Text    ${REGISTRATION_PASSWORD}    TestPassword123!
-    Sleep    3 seconds
-
-Input Login Details
-    [Documentation]    Fill the login form with valid user details.
-    Sleep    3 seconds
-    Input Text    ${LOGIN_EMAIL}    testuser@example.com
-    Sleep    3 seconds
-    Input Text    ${LOGIN_PASSWORD}    TestPassword123!
-    Sleep    3 seconds
-
-Input Login Details For Another User
-    [Documentation]    Fill the login form with valid user details.
-    Sleep    3 seconds
-    Input Text    ${LOGIN_EMAIL}    aaa@example.com
-    Sleep    3 seconds
-    Input Text    ${LOGIN_PASSWORD}    TestPassword123!
-    Sleep    3 seconds
-
-Wrong Input Login Details
-    [Documentation]    Fill the login form with valid user details.
-    Sleep    3 seconds
-    Input Text    ${LOGIN_EMAIL}    testuser
-    Sleep    3 seconds
-    Input Text    ${LOGIN_PASSWORD}    TestPassword123!
-    Sleep    3 seconds
-Submit Registration Form
-    [Documentation]    Submit the registration form.
-    Click Button    ${REGISTER_BUTTON}
-
-Submit Login Form
-    [Documentation]    Submit the login form.
-    Click Button    ${LOGIN_BUTTON}
-
-Press Logout Button
-    [Documentation]    Press the logout button.
-    Click Button    ${LOGOUT_BUTTON}
-
-Press Publish Button
-    [Documentation]    Press the publish button.
-    Click Button    ${PUBLISH_BUTTON}
-Type Text In Post And Choose Public
-    [Documentation]    Type text in the post.
-    Sleep    3 seconds
-    Input Text    ${POST_TEXT}    This is a public post.
-    Select From List By Label    xpath=//select[@name='privacy']    public
-    Sleep    3 seconds
-
-Type Text In Post And Choose Private
-    [Documentation]    Type text in the post.
-    Input Text    ${POST_TEXT}    This is a private post.
-    Select From List By Label    xpath=//select[@name='privacy']    friends
-    Sleep    3 seconds
