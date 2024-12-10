@@ -43,9 +43,11 @@ jobs:
           source .venv/bin/activate
           robot --variable BROWSER:headlessfirefox --variable BROWSER_OPTIONS:"--disable-dev-shm-usage" --include smoke -d results e2e_tests/tests/
   
-      - name: Run K6 Performance Test
+      - name: Run K6 Performance Test in Docker
         run: |
           docker run --rm -i \
+            --network="host" \
             -v ${{ github.workspace }}/performance_test:/performance_test \
-            grafana/k6 run /performance_test/performance_test.js
+            grafana/k6 run http://localhost/register
+        
         
