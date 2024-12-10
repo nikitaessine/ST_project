@@ -1,125 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.10.12 on darwin)" generated="2024-12-10T13:01:53.301542" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.10.12 on darwin)" generated="2024-12-10T13:10:29.377917" rpa="false" schemaversion="5">
 <suite id="s1" name="Test User Authentication" source="/Users/nikita/sandbox/ST_project/e2e_tests/tests/test_user_authentication.robot">
-<test id="s1-t1" name="User Is Able To Comment On Post Made By Another User" line="95">
+<test id="s1-t1" name="User Is Able To Comment On Post Made By Themselves" line="115">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:01:53.413299" level="INFO">Opening browser 'firefox' to base url 'http://localhost/login'.</msg>
+<msg time="2024-12-10T13:10:29.466166" level="INFO">Opening browser 'firefox' to base url 'http://localhost/login'.</msg>
 <arg>${BASE_URL}/login</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-12-10T13:01:53.413102" elapsed="1.508815"/>
+<status status="PASS" start="2024-12-10T13:10:29.465959" elapsed="1.471120"/>
 </kw>
-<kw name="Input Login Details For Another User" owner="keywords">
+<kw name="Input Login Details" owner="keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:01:54.923160" level="INFO">Typing text 'aaa@example.com' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[1]/div/input'.</msg>
+<msg time="2024-12-10T13:10:30.938518" level="INFO">Typing text 'testuser@example.com' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[1]/div/input'.</msg>
 <arg>${LOGIN_EMAIL}</arg>
-<arg>aaa@example.com</arg>
+<arg>testuser@example.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-10T13:01:54.922812" elapsed="0.051513"/>
+<status status="PASS" start="2024-12-10T13:10:30.938096" elapsed="0.043476"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:01:54.974766" level="INFO">Typing text 'TestPassword123!' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[2]/div/input'.</msg>
+<msg time="2024-12-10T13:10:30.982013" level="INFO">Typing text 'TestPassword123!' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[2]/div/input'.</msg>
 <arg>${LOGIN_PASSWORD}</arg>
 <arg>TestPassword123!</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-10T13:01:54.974542" elapsed="0.012470"/>
+<status status="PASS" start="2024-12-10T13:10:30.981779" elapsed="0.012142"/>
 </kw>
 <doc>Fill the login form with valid user details.</doc>
-<status status="PASS" start="2024-12-10T13:01:54.922479" elapsed="0.064696"/>
+<status status="PASS" start="2024-12-10T13:10:30.937667" elapsed="0.056421"/>
 </kw>
 <kw name="Submit Login Form" owner="keywords">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:01:54.987772" level="INFO">Clicking button 'xpath=/html/body/div/div[2]/div/div/form/button[1]'.</msg>
+<msg time="2024-12-10T13:10:30.994722" level="INFO">Clicking button 'xpath=/html/body/div/div[2]/div/div/form/button[1]'.</msg>
 <arg>${LOGIN_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-10T13:01:54.987602" elapsed="0.218806"/>
+<status status="PASS" start="2024-12-10T13:10:30.994550" elapsed="0.215523"/>
 </kw>
 <doc>Submit the login form.</doc>
-<status status="PASS" start="2024-12-10T13:01:54.987377" elapsed="0.219206"/>
+<status status="PASS" start="2024-12-10T13:10:30.994309" elapsed="0.215970"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-12-10T13:01:58.208100" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-12-10T13:01:55.206768" elapsed="3.002601"/>
+<kw name="Type Text In Post And Choose Public" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${POST_TEXT}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-10T13:10:31.211536" elapsed="0.222465"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:01:58.212413" level="INFO">Typing text 'testuser' into text field 'xpath=//input[@class='input' and @type='search' and @placeholder='Search bunnies...']'.</msg>
-<arg>${SEARCH_INPUT}</arg>
-<arg>testuser</arg>
+<msg time="2024-12-10T13:10:31.434533" level="INFO">Typing text 'This is a public post.' into text field 'xpath=//textarea[@class='jsx-1336507874 textarea']'.</msg>
+<arg>${POST_TEXT}</arg>
+<arg>This is a public post.</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-10T13:01:58.210741" elapsed="0.023840"/>
+<status status="PASS" start="2024-12-10T13:10:31.434256" elapsed="0.030022"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${DROPDOWN_CONTENT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-12-10T13:01:58.235425" elapsed="0.873691"/>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-12-10T13:10:31.464729" level="INFO">Selecting options from selection list 'xpath=//select[@name='privacy']' by label public.</msg>
+<arg>xpath=//select[@name='privacy']</arg>
+<arg>public</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-12-10T13:10:31.464505" elapsed="0.042102"/>
 </kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>${DROPDOWN_CONTENT}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2024-12-10T13:01:59.109615" elapsed="0.272474"/>
+<doc>Type text in the post.</doc>
+<status status="PASS" start="2024-12-10T13:10:31.210982" elapsed="0.295776"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:01:59.383317" level="INFO">Clicking element 'xpath=//div[@class='dropdown-content pt-0 pb-0']'.</msg>
-<arg>${DROPDOWN_CONTENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-10T13:01:59.382817" elapsed="0.760575"/>
+<kw name="Press Publish Button" owner="keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-10T13:10:31.507469" level="INFO">Clicking button 'xpath=/html/body/div/div[2]/div[2]/div/div[2]/form/div/button'.</msg>
+<arg>${PUBLISH_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-10T13:10:31.507274" elapsed="0.216474"/>
+</kw>
+<doc>Press the publish button.</doc>
+<status status="PASS" start="2024-12-10T13:10:31.507017" elapsed="0.217194"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>This is a public post.</arg>
 <arg>timeout=30s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-12-10T13:02:00.144740" elapsed="0.007933"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-12-10T13:02:03.154746" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-12-10T13:02:00.153399" elapsed="3.001719"/>
+<status status="PASS" start="2024-12-10T13:10:31.724966" elapsed="0.005158"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:02:03.156321" level="INFO">Typing text 'This is a comment.' into text field 'xpath=//input[@class='jsx-2270411553 input ml-2']'.</msg>
+<msg time="2024-12-10T13:10:31.731364" level="INFO">Typing text 'This is my own comment.' into text field 'xpath=//input[@class='jsx-2270411553 input ml-2']'.</msg>
 <arg>${COMMENT_TEXT}</arg>
-<arg>This is a comment.</arg>
+<arg>This is my own comment.</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-10T13:02:03.155737" elapsed="0.035001"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-12-10T13:02:06.191998" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-12-10T13:02:03.191166" elapsed="3.001984"/>
+<status status="PASS" start="2024-12-10T13:10:31.730787" elapsed="0.045782"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:02:06.196255" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@class='jsx-2270411553 input ml-2'] element.</msg>
-<msg time="2024-12-10T13:02:06.464231" level="INFO">Pressing special key ENTER to element.</msg>
-<msg time="2024-12-10T13:02:06.464559" level="INFO">Releasing special key ENTER.</msg>
+<msg time="2024-12-10T13:10:31.777374" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@class='jsx-2270411553 input ml-2'] element.</msg>
+<msg time="2024-12-10T13:10:32.042712" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-12-10T13:10:32.043087" level="INFO">Releasing special key ENTER.</msg>
 <arg>${COMMENT_TEXT}</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2024-12-10T13:02:06.194489" elapsed="0.284116"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-12-10T13:02:09.481468" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-12-10T13:02:06.479128" elapsed="3.003375"/>
+<status status="PASS" start="2024-12-10T13:10:31.776902" elapsed="0.278394"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>This is a comment.</arg>
+<arg>This is my own comment.</arg>
 <arg>timeout=30s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-12-10T13:02:09.483581" elapsed="0.007638"/>
+<status status="PASS" start="2024-12-10T13:10:32.055931" elapsed="0.212622"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-12-10T13:02:09.491969" elapsed="0.443461"/>
+<status status="PASS" start="2024-12-10T13:10:32.269455" elapsed="0.565642"/>
 </kw>
-<doc>Verify that a user can comment on a post made by another user.</doc>
+<doc>Verify that a user can comment on a post made by themselves.</doc>
 <tag>smoke</tag>
-<status status="PASS" start="2024-12-10T13:01:53.412348" elapsed="16.523420"/>
+<status status="PASS" start="2024-12-10T13:10:29.465197" elapsed="3.370252"/>
 </test>
-<status status="PASS" start="2024-12-10T13:01:53.303503" elapsed="16.632735"/>
+<status status="PASS" start="2024-12-10T13:10:29.379642" elapsed="3.456265"/>
 </suite>
 <statistics>
 <total>

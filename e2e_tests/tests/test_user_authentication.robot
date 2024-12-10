@@ -111,3 +111,17 @@ User Is Able To Comment On Post Made By Another User
     Sleep    3s
     Wait Until Page Contains    This is a comment.    timeout=30s
     Close Browser
+
+User Is Able To Comment On Post Made By Themselves
+    [Documentation]    Verify that a user can comment on a post made by themselves.
+    [Tags]    smoke
+    Open Browser    ${BASE_URL}/login    headlessfirefox
+    Input Login Details
+    Submit Login Form
+    Type Text In Post And Choose Public
+    Press Publish Button
+    Wait Until Page Contains    This is a public post.    timeout=30s
+    Input Text    ${COMMENT_TEXT}    This is my own comment.
+    Press Keys    ${COMMENT_TEXT}    ENTER
+    Wait Until Page Contains    This is my own comment.    timeout=30s
+    Close Browser
