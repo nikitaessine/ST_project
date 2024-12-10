@@ -42,4 +42,3 @@ jobs:
         run: |
           source .venv/bin/activate
           robot --variable BROWSER:headlessfirefox --variable BROWSER_OPTIONS:"--disable-dev-shm-usage" --include smoke -d results e2e_tests/tests/
-        
