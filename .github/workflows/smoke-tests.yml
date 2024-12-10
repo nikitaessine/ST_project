@@ -42,15 +42,10 @@ jobs:
         run: |
           source .venv/bin/activate
           robot --variable BROWSER:headlessfirefox --variable BROWSER_OPTIONS:"--disable-dev-shm-usage" --include smoke -d results e2e_tests/tests/
-      
-      - name: Install K6
-        run: |
-          sudo apt update
-          sudo apt install -y gnupg
-          curl -s https://dl.k6.io/key.gpg | sudo apt-key add -
-          echo "deb https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
-          sudo apt update
-          sudo apt install k6
   
-      - name: Run Performance Test
-        run: k6 run /performance_test/performance_test.js
+      - name: Run K6 Performance Test
+        run: |
+          docker run --rm -i \
+            -v ${{ github.workspace }}/performance_test:/performance_test \
+            grafana/k6 run /performance_test/performance_test.js
+        
