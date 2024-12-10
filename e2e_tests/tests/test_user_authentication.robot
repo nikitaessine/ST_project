@@ -129,7 +129,7 @@ User Is Able To Comment On Post Made By Themselves
 User Is Able To Delete Post Made By Themselves
     [Documentation]    Verify that a user can delete a post made by themselves.
     [Tags]    smoke
-    Open Browser    ${BASE_URL}/login
+    Open Browser    ${BASE_URL}/login    headlessfirefox
     Input Login Details
     Submit Login Form
     Type Text In Post And Choose Public
