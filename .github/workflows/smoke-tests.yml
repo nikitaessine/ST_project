@@ -42,3 +42,11 @@ jobs:
         run: |
           source .venv/bin/activate
           robot --variable BROWSER:headlessfirefox --variable BROWSER_OPTIONS:"--disable-dev-shm-usage" --include smoke -d results e2e_tests/tests/
+      
+      - name: Setup K6
+        uses: grafana/setup-k6-action@v1
+  
+      - name: Run local k6 test
+        uses: grafana/run-k6-action@v1
+        with:
+          path: performance_test/performance_test.js
