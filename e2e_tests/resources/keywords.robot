@@ -46,10 +46,12 @@ Press Publish Button
     Click Button    ${PUBLISH_BUTTON}
 Type Text In Post And Choose Public
     [Documentation]    Type text in the post.
+    Wait Until Element Is Visible    ${POST_TEXT}    timeout=30s
     Input Text    ${POST_TEXT}    This is a public post.
     Select From List By Label    xpath=//select[@name='privacy']    public
 
 Type Text In Post And Choose Private
     [Documentation]    Type text in the post.
+    Wait Until Element Is Visible    ${POST_TEXT}    timeout=30s
     Input Text    ${POST_TEXT}    This is a private post.
     Select From List By Label    xpath=//select[@name='privacy']    friends
