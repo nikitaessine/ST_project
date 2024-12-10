@@ -125,3 +125,22 @@ User Is Able To Comment On Post Made By Themselves
     Press Keys    ${COMMENT_TEXT}    ENTER
     Wait Until Page Contains    This is my own comment.    timeout=30s
     Close Browser
+
+User Is Able To Delete Post Made By Themselves
+    [Documentation]    Verify that a user can delete a post made by themselves.
+    [Tags]    smoke
+    Open Browser    ${BASE_URL}/login
+    Input Login Details
+    Submit Login Form
+    Type Text In Post And Choose Public
+    Press Publish Button
+    Wait Until Page Contains    This is a public post.    timeout=30s
+    ${count_before}=    Get Element Count    xpath=//div[contains(@class, 'mt-5')]
+    Sleep    3s
+    Click Element    ${DELETE_BUTTON}
+    Sleep    3s
+    Handle Alert    ACCEPT
+    Sleep    3s
+    ${count_after}=    Get Element Count    xpath=//div[contains(@class, 'mt-5')]
+    Should Be True    ${count_after} == ${count_before} - 1
+    Close Browser
