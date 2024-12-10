@@ -91,3 +91,19 @@ User Is Able To See Post Made By Another User
     Wait Until Page Contains    This is a public post.    timeout=30s
     Wait Until Page Contains    testuser    timeout=30s
     Close Browser
+
+User Is Able To Comment On Post Made By Another User
+    [Documentation]    Verify that a user can comment on a post made by another user.
+    [Tags]    smoke
+    Open Browser    ${BASE_URL}/login    headlessfirefox
+    Input Login Details For Another User
+    Submit Login Form
+    Input Text    ${SEARCH_INPUT}    testuser
+    Wait Until Element Is Visible    ${DROPDOWN_CONTENT}
+    Scroll Element Into View    ${DROPDOWN_CONTENT}
+    Click Element    ${DROPDOWN_CONTENT}
+    Wait Until Page Contains    This is a public post.    timeout=30s
+    Input Text    ${COMMENT_TEXT}    This is a comment.
+    Press Key    ${COMMENT_TEXT}    ENTER
+    Wait Until Page Contains    This is a comment.    timeout=30s
+    Close Browser

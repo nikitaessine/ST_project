@@ -14,4 +14,4 @@ ${PUBLISH_BUTTON}           xpath=/html/body/div/div[2]/div[2]/div/div[2]/form/d
 ${PRIVATE_ICON}             xpath=//i[@class='jsx-2270411553 fas mr-1 fa-user-friends']
 ${SEARCH_INPUT}             xpath=//input[@class='input' and @type='search' and @placeholder='Search bunnies...']
 ${DROPDOWN_CONTENT}         xpath=//div[@class='dropdown-content pt-0 pb-0']
-
+${COMMENT_TEXT}             xpath=//input[@class='jsx-2270411553 input ml-2']
