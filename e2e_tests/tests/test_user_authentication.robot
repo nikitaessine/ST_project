@@ -17,7 +17,7 @@ User Can Register To The Application
 User Cannot Register With Short Username
     [Documentation]    Verify that a user cannot register with a username less than 2 characters.
     [Tags]    daily
-    Open Browser    ${BASE_URL}/register
+    Open Browser    ${BASE_URL}/register    headlessfirefox
     Input Invalid Registration Details
     Submit Registration Form
     Wait Until Page Contains   username must be at least 2 characters    timeout=10s
