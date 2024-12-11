@@ -1,26 +1,19 @@
-1732794128000	geckodriver	INFO	Listening on 127.0.0.1:56974
-1732794128015	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/Use ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/nw/7m20wcgj22165y8346py4_d00000gn/T/rust_mozprofilek62g2l"
+1733909644105	geckodriver	INFO	Listening on 127.0.0.1:55246
+1733909644125	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/Use ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/nw/7m20wcgj22165y8346py4_d00000gn/T/rust_mozprofilelSCD9J"
 console.warn: services.settings: Ignoring preference override of remote settings server
 console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
-1732794128351	Marionette	INFO	Marionette enabled
+1733909644609	Marionette	INFO	Marionette enabled
 console.error: "Warning: unrecognized command line flag" "-remote-allow-hosts"
-1732794128565	Marionette	INFO	Listening on port 56989
-WebDriver BiDi listening on ws://127.0.0.1:56975
-Read port: 56989
-1732794128706	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1733909644835	Marionette	INFO	Listening on port 55256
+WebDriver BiDi listening on ws://127.0.0.1:55247
+Read port: 55256
+1733909644946	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
-DevTools listening on ws://127.0.0.1:56975/devtools/browser/f13e0017-f4fa-45cd-9f94-f00457ca198a
+DevTools listening on ws://127.0.0.1:55247/devtools/browser/4822d684-9c79-4f5a-a4f8-d22395726760
 console.error: ({})
-console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
-JavaScript error: , line 0: NotFoundError: No such JSProcessActor 'DevToolsProcess'
-JavaScript error: , line 0: NotFoundError: No such JSProcessActor 'DevToolsProcess'
-JavaScript error: , line 0: NotFoundError: No such JSProcessActor 'DevToolsProcess'
-JavaScript error: resource:///modules/sessionstore/SessionStore.sys.mjs, line 3624: TypeError: this._windows[aWindow.__SSi] is undefined
-JavaScript warning: http://localhost/static/js/2.e2533bc5.chunk.js, line 2: Script terminated by timeout at:
-g@http://localhost/static/js/2.e2533bc5.chunk.js:2:399829
-
-1732796382875	Marionette	INFO	Stopped listening on port 56989
-console.error: "Failed to fetch https://spocs.getpocket.com/user:" "NetworkError when attempting to fetch resource."
-console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
-console.error: ({})
-console.error: ({})
+1733909646688	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:206:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:190:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:467:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:220:33
+1733909646897	Marionette	INFO	Stopped listening on port 55256

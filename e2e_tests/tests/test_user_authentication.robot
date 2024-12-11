@@ -14,6 +14,15 @@ User Can Register To The Application
     Wait Until Page Does Not Contain    Register    timeout=10s
     Close Browser
 
+User Cannot Register With Short Username
+    [Documentation]    Verify that a user cannot register with a username less than 2 characters.
+    [Tags]    negative
+    Open Browser    ${BASE_URL}/register
+    Input Invalid Registration Details
+    Submit Registration Form
+    Wait Until Page Contains   username must be at least 2 characters    timeout=10s
+    Close Browser
+
 User Can Login To The Application
     [Documentation]    Verify that a user can successfully login to the application.
     [Tags]    smoke

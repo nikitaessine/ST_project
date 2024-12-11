@@ -1,146 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.10.12 on darwin)" generated="2024-12-10T13:41:21.510516" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.10.12 on darwin)" generated="2024-12-11T11:34:03.854846" rpa="false" schemaversion="5">
 <suite id="s1" name="Test User Authentication" source="/Users/nikita/sandbox/ST_project/e2e_tests/tests/test_user_authentication.robot">
-<test id="s1-t1" name="User Is Able To Delete Post Made By Themselves" line="129">
+<test id="s1-t1" name="User Cannot Register With Short Username" line="17">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:41:21.599489" level="INFO">Opening browser 'firefox' to base url 'http://localhost/login'.</msg>
-<arg>${BASE_URL}/login</arg>
+<msg time="2024-12-11T11:34:03.966666" level="INFO">Opening browser 'firefox' to base url 'http://localhost/register'.</msg>
+<arg>${BASE_URL}/register</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-12-10T13:41:21.599289" elapsed="1.562280"/>
+<status status="PASS" start="2024-12-11T11:34:03.966468" elapsed="2.063867"/>
 </kw>
-<kw name="Input Login Details" owner="keywords">
+<kw name="Input Invalid Registration Details" owner="keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:41:23.162776" level="INFO">Typing text 'testuser@example.com' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[1]/div/input'.</msg>
-<arg>${LOGIN_EMAIL}</arg>
+<msg time="2024-12-11T11:34:06.032927" level="INFO">Typing text 't' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[2]/div/input'.</msg>
+<arg>${REGISTRATION_USERNAME}</arg>
+<arg>t</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-11T11:34:06.032350" elapsed="0.066707"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-11T11:34:06.099534" level="INFO">Typing text 'testuser@example.com' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[1]/div/input'.</msg>
+<arg>${REGISTRATION_EMAIL}</arg>
 <arg>testuser@example.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-10T13:41:23.162467" elapsed="0.050673"/>
+<status status="PASS" start="2024-12-11T11:34:06.099284" elapsed="0.033234"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:41:23.213885" level="INFO">Typing text 'TestPassword123!' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[2]/div/input'.</msg>
-<arg>${LOGIN_PASSWORD}</arg>
+<msg time="2024-12-11T11:34:06.132996" level="INFO">Typing text 'TestPassword123!' into text field 'xpath=/html/body/div/div[2]/div/div/form/fieldset/div[3]/div/input'.</msg>
+<arg>${REGISTRATION_PASSWORD}</arg>
 <arg>TestPassword123!</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-10T13:41:23.213536" elapsed="0.013538"/>
+<status status="PASS" start="2024-12-11T11:34:06.132747" elapsed="0.024214"/>
 </kw>
-<doc>Fill the login form with valid user details.</doc>
-<status status="PASS" start="2024-12-10T13:41:23.162141" elapsed="0.065143"/>
+<doc>Fill the registration form with invalid user details.</doc>
+<status status="PASS" start="2024-12-11T11:34:06.031816" elapsed="0.125317"/>
 </kw>
-<kw name="Submit Login Form" owner="keywords">
+<kw name="Submit Registration Form" owner="keywords">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:41:23.228406" level="INFO">Clicking button 'xpath=/html/body/div/div[2]/div/div/form/button[1]'.</msg>
-<arg>${LOGIN_BUTTON}</arg>
+<msg time="2024-12-11T11:34:06.157865" level="INFO">Clicking button 'xpath=/html/body/div/div[2]/div/div/form/button[1]'.</msg>
+<arg>${REGISTER_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-10T13:41:23.228170" elapsed="0.247265"/>
+<status status="PASS" start="2024-12-11T11:34:06.157626" elapsed="0.735336"/>
 </kw>
-<doc>Submit the login form.</doc>
-<status status="PASS" start="2024-12-10T13:41:23.227831" elapsed="0.247779"/>
-</kw>
-<kw name="Type Text In Post And Choose Public" owner="keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${POST_TEXT}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-12-10T13:41:23.476086" elapsed="0.214610"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:41:23.691192" level="INFO">Typing text 'This is a public post.' into text field 'xpath=//textarea[@class='jsx-1336507874 textarea']'.</msg>
-<arg>${POST_TEXT}</arg>
-<arg>This is a public post.</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-10T13:41:23.690934" elapsed="0.011702"/>
-</kw>
-<kw name="Select From List By Label" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:41:23.703141" level="INFO">Selecting options from selection list 'xpath=//select[@name='privacy']' by label public.</msg>
-<arg>xpath=//select[@name='privacy']</arg>
-<arg>public</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<status status="PASS" start="2024-12-10T13:41:23.702888" elapsed="0.043813"/>
-</kw>
-<doc>Type text in the post.</doc>
-<status status="PASS" start="2024-12-10T13:41:23.475836" elapsed="0.271013"/>
-</kw>
-<kw name="Press Publish Button" owner="keywords">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:41:23.747450" level="INFO">Clicking button 'xpath=/html/body/div/div[2]/div[2]/div/div[2]/form/div/button'.</msg>
-<arg>${PUBLISH_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-10T13:41:23.747286" elapsed="0.214602"/>
-</kw>
-<doc>Press the publish button.</doc>
-<status status="PASS" start="2024-12-10T13:41:23.747058" elapsed="0.215142"/>
+<doc>Submit the registration form.</doc>
+<status status="PASS" start="2024-12-11T11:34:06.157338" elapsed="0.735820"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>This is a public post.</arg>
-<arg>timeout=30s</arg>
+<arg>username must be at least 2 characters</arg>
+<arg>timeout=10s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-12-10T13:41:23.962728" elapsed="0.004074"/>
-</kw>
-<kw name="Get Element Count" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:41:23.971368" level="INFO">${count_before} = 4</msg>
-<var>${count_before}</var>
-<arg>xpath=//div[contains(@class, 'mt-5')]</arg>
-<doc>Returns the number of elements matching ``locator``.</doc>
-<status status="PASS" start="2024-12-10T13:41:23.967514" elapsed="0.004082"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-12-10T13:41:26.973204" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-12-10T13:41:23.972068" elapsed="3.002117"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:41:26.975972" level="INFO">Clicking element 'xpath=//button[@class='jsx-2270411553 delete']'.</msg>
-<arg>${DELETE_BUTTON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-10T13:41:26.975121" elapsed="0.056686"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-12-10T13:41:30.032792" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-12-10T13:41:27.032255" elapsed="3.002007"/>
-</kw>
-<kw name="Handle Alert" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:41:30.036720" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<arg>ACCEPT</arg>
-<doc>Handles the current alert and returns its message.</doc>
-<status status="PASS" start="2024-12-10T13:41:30.035805" elapsed="0.025548"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-12-10T13:41:33.062688" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-12-10T13:41:30.061885" elapsed="3.001234"/>
-</kw>
-<kw name="Get Element Count" owner="SeleniumLibrary">
-<msg time="2024-12-10T13:41:33.068630" level="INFO">${count_after} = 3</msg>
-<var>${count_after}</var>
-<arg>xpath=//div[contains(@class, 'mt-5')]</arg>
-<doc>Returns the number of elements matching ``locator``.</doc>
-<status status="PASS" start="2024-12-10T13:41:33.063683" elapsed="0.005167"/>
-</kw>
-<kw name="Should Be True" owner="BuiltIn">
-<arg>${count_after} == ${count_before} - 1</arg>
-<doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2024-12-10T13:41:33.069239" elapsed="0.000609"/>
+<status status="PASS" start="2024-12-11T11:34:06.893432" elapsed="0.002757"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-12-10T13:41:33.070246" elapsed="0.448152"/>
+<status status="PASS" start="2024-12-11T11:34:06.896468" elapsed="0.558760"/>
 </kw>
-<doc>Verify that a user can delete a post made by themselves.</doc>
-<tag>smoke</tag>
-<status status="PASS" start="2024-12-10T13:41:21.598569" elapsed="11.920050"/>
+<doc>Verify that a user cannot register with a username less than 2 characters.</doc>
+<tag>negative</tag>
+<status status="PASS" start="2024-12-11T11:34:03.965710" elapsed="3.489791"/>
 </test>
-<status status="PASS" start="2024-12-10T13:41:21.512234" elapsed="12.006704"/>
+<status status="PASS" start="2024-12-11T11:34:03.856819" elapsed="3.599105"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">smoke</stat>
+<stat pass="1" fail="0" skip="0">negative</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="Test User Authentication">Test User Authentication</stat>

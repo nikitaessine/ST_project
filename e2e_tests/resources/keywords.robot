@@ -9,6 +9,12 @@ Input Registration Details
     Input Text    ${REGISTRATION_EMAIL}       testuser@example.com
     Input Text    ${REGISTRATION_PASSWORD}    TestPassword123!
 
+Input Invalid Registration Details
+    [Documentation]    Fill the registration form with invalid user details.
+    Input Text    ${REGISTRATION_USERNAME}    t
+    Input Text    ${REGISTRATION_EMAIL}       testuser@example.com
+    Input Text    ${REGISTRATION_PASSWORD}    TestPassword123!
+
 Input Registration Details For Another User
     [Documentation]    Fill the registration form with valid user details.
     Input Text    ${REGISTRATION_USERNAME}    aaa
