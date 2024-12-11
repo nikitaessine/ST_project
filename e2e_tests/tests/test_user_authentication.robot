@@ -16,7 +16,7 @@ User Can Register To The Application
 
 User Cannot Register With Short Username
     [Documentation]    Verify that a user cannot register with a username less than 2 characters.
-    [Tags]    negative
+    [Tags]    daily
     Open Browser    ${BASE_URL}/register
     Input Invalid Registration Details
     Submit Registration Form
@@ -79,7 +79,7 @@ User Gets Error When Login With Wrong Credentials
 
 User Is Able To See Post Made By Another User
     [Documentation]    Verify that a user can see a post made by another user.
-    [Tags]    smoke
+    [Tags]    daily
     Open Browser    ${BASE_URL}/login    headlessfirefox
     Input Login Details
     Submit Login Form
@@ -103,7 +103,7 @@ User Is Able To See Post Made By Another User
 
 User Is Able To Comment On Post Made By Another User
     [Documentation]    Verify that a user can comment on a post made by another user.
-    [Tags]    smoke
+    [Tags]    daily
     Open Browser    ${BASE_URL}/login    headlessfirefox
     Input Login Details For Another User
     Submit Login Form
@@ -123,7 +123,7 @@ User Is Able To Comment On Post Made By Another User
 
 User Is Able To Comment On Post Made By Themselves
     [Documentation]    Verify that a user can comment on a post made by themselves.
-    [Tags]    smoke
+    [Tags]    daily
     Open Browser    ${BASE_URL}/login    headlessfirefox
     Input Login Details
     Submit Login Form
@@ -137,7 +137,7 @@ User Is Able To Comment On Post Made By Themselves
 
 User Is Able To Delete Post Made By Themselves
     [Documentation]    Verify that a user can delete a post made by themselves.
-    [Tags]    smoke
+    [Tags]    daily
     Open Browser    ${BASE_URL}/login    headlessfirefox
     Input Login Details
     Submit Login Form
